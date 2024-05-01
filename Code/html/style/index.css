@@ -13,7 +13,6 @@ body {
   font-size:32px;
   padding-top:10vh;
   height:100vh;
-  overflow:hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform: translate3d(0,0,0);
