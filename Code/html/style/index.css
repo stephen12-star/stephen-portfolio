@@ -8,72 +8,79 @@ body{
     justify-content: space-evenly;
 }
 
-body{ 
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    background: #131313;
-    color: #fff;
-    font-size: 96px;
-    font-family: 'Fira Mono', monospace;
-    letter-spacing: -7px;
-  }
+body {
+  font-weight:500;
+  font-size:32px;
+  padding-top:10vh;
+  height:100vh;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+div {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+div:first-of-type {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+div:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+
+
+p {
+  font-size:12px;
+  color:#999;
+  margin-top:200px;
+}
+
+#boxone {
+  display: flex;
+  flex-direction: column;
+  font-size: 8vh;
+  flex-wrap: wrap;
+  padding-right: 6vh;
+}
   
-  div{
-    animation: glitch 1s linear infinite;
-  }
-  
-  @keyframes glitch{
-    2%,64%{
-      transform: translate(2px,0) skew(0deg);
-    }
-    4%,60%{
-      transform: translate(-2px,0) skew(0deg);
-    }
-    62%{
-      transform: translate(0,0) skew(5deg); 
-    }
-  }
-  
-  div:before,
-  div:after{
-    content: attr(title);
-    position: absolute;
-    left: 0;
-  }
-  
-  div:before{
-    animation: glitchTop 1s linear infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  }
-  
-  @keyframes glitchTop{
-    2%,64%{
-      transform: translate(2px,-2px);
-    }
-    4%,60%{
-      transform: translate(-2px,2px);
-    }
-    62%{
-      transform: translate(13px,-1px) skew(-13deg); 
-    }
-  }
-  
-  div:after{
-    animation: glitchBotom 1.5s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  }
-  
-  @keyframes glitchBotom{
-    2%,64%{
-      transform: translate(-2px,0);
-    }
-    4%,60%{
-      transform: translate(-2px,0);
-    }
-    62%{
-      transform: translate(-22px,5px) skew(21deg); 
-    }
-  }
+
+img {
+  box-shadow: 10px 10px;
+  color: #57425F;
+}
