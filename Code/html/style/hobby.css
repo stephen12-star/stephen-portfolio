@@ -1,4 +1,43 @@
 body{
     font-family: 'Trebuchet MS', sans-serif; 
     font-weight: 300;
+    background-color: #D9D9D9;
 }
+p {
+    font-size: 35px;
+    margin-left: 10%;
+}
+
+h1 {
+    font-size: 70px;
+    text-align: center;
+    margin:0%;
+    padding: 2%;
+}
+
+#one {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.imageBox {
+    position: relative;
+    float: left;
+  }
+
+  .imageBox .hoverImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    background-size: cover;
+  }
+
+  .imageBox:hover .hoverImg {
+    display: block;
+  }
+
+  .imageBox:hover .hoverImg {
+      display: block;
+  }
