@@ -40,3 +40,9 @@ p{
     display: flex;
     justify-content: space-evenly;
 }
+button{
+    width: 200px;
+    height: 100px;
+    font-size: 2em;
+    margin-left: 45%;
+}
